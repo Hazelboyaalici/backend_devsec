@@ -9,6 +9,14 @@ from datetime import datetime, timedelta
 from werkzeug.utils import secure_filename
 from datetime import datetime
 
+
+
+def get_user_additional(user_id):
+    query= "SELECT * FROM users WHERE id = "+ user_id
+    print(query)
+    return query
+get_user_additional("1")
+
 app = Flask(__name__)
 CORS(app)
 
