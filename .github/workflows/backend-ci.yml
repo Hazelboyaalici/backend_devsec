@@ -57,3 +57,6 @@ jobs:
             docker rm backend || true
             docker run -d --name backend -p 5000:5000 ${{ env.DOCKER_BACKEND_IMAGE }}:2.0.0
           '
+      - name: Copy docker-compose.elk.yml file 
+        run: | 
+          scp docker-compose.elk.yml ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:~/docker-compose.elk.yml
